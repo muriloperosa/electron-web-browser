@@ -5,13 +5,35 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Electron Web Browser!</title>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+  <body class="bg-light">
+
+    <div class="container-fluid mt-3">
+      <h1>Welcome to Electron Web Browser!</h1>
+      <hr/>
+      <form id="form-search">
+        <div class="form-group">
+          <label class="form-label fw-bold" for="q">Enter the key words to search:</label> <br/>
+          <input type="text" class="form-control" name="q" id="q" required placeholder="Banana">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="form-label fw-bold" for="engine">Select Search Engine(s):</label> <br/>
+          <select class="form-select" name="engine" id="engine" aria-label="Default select">
+            <option value="" selected>Search Engines...</option>
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="yahoo">Yahoo</option>
+          </select>
+        </div>
+        <br>
+        <div class="form-group float-end">
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </div>
+      </form>
+    </div>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
